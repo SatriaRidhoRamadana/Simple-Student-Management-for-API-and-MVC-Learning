@@ -13,7 +13,6 @@ Program sederhana untuk memahami konsep **Model-View-Controller (MVC)** dan **RE
 - ✅ **MVC Architecture** yang jelas dan mudah dipahami
 - ✅ **REST API** endpoints dengan JSON response
 - ✅ **Web Interface** yang interaktif dan responsif
-- ✅ **API Testing Tool** terintegrasi
 - ✅ Dokumentasi lengkap untuk pembelajaran
 
 ## 🚀 Quick Start
@@ -119,7 +118,21 @@ application/
 
 ## 🧪 Testing API
 
-Buka file `api_testing_tool.html` di browser untuk testing API secara interaktif dengan UI yang user-friendly.
+Gunakan tools seperti **Postman**, **Thunder Client** (VS Code extension), atau **curl** untuk testing API.
+
+**Contoh dengan browser:**
+- Buka: `http://localhost/UAS_PW/api/students` untuk melihat JSON response
+
+**Contoh dengan curl:**
+```bash
+# Test GET
+curl http://localhost/UAS_PW/api/students
+
+# Test POST
+curl -X POST http://localhost/UAS_PW/api/students/create \
+  -H "Content-Type: application/json" \
+  -d '{"nama":"Test","nim":"999","email":"test@mail.com","prodi":"TI"}'
+```
 
 ## 📖 Dokumentasi
 

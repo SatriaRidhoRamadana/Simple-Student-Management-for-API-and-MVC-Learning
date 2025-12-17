@@ -60,7 +60,6 @@
 
             <div class="btn-group">
                 <a href="<?php echo base_url('students/create'); ?>" class="btn btn-primary">➕ Tambah Mahasiswa</a>
-                <a href="<?php echo base_url('api/students'); ?>" class="btn btn-primary" target="_blank">📡 Lihat API JSON</a>
             </div>
 
             <?php if(empty($students)): ?>
