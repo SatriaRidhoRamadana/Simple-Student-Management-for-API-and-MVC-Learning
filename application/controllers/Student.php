@@ -14,9 +14,7 @@ class Student extends CI_Controller {
         $this->load->helper('url');
     }
 
-    /**
-     * === BAGIAN WEB (Menampilkan view) ===
-     */
+   
 
     /**
      * Halaman utama - menampilkan daftar semua mahasiswa
@@ -51,10 +49,10 @@ class Student extends CI_Controller {
 
         if ($this->Student_model->insert($data)) {
             $this->session->set_flashdata('message', 'Mahasiswa berhasil ditambahkan');
-            redirect('student');
+            redirect('students');
         } else {
             $this->session->set_flashdata('error', 'Gagal menambahkan mahasiswa');
-            redirect('student/create');
+            redirect('students/create');
         }
     }
 
@@ -86,10 +84,10 @@ class Student extends CI_Controller {
 
         if ($this->Student_model->update($id, $data)) {
             $this->session->set_flashdata('message', 'Mahasiswa berhasil diperbarui');
-            redirect('student');
+            redirect('students');
         } else {
             $this->session->set_flashdata('error', 'Gagal memperbarui mahasiswa');
-            redirect('student/edit/' . $id);
+            redirect('students/edit/' . $id);
         }
     }
 
@@ -102,7 +100,7 @@ class Student extends CI_Controller {
         } else {
             $this->session->set_flashdata('error', 'Gagal menghapus mahasiswa');
         }
-        redirect('student');
+        redirect('students');
     }
 
     /**

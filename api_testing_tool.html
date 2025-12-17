@@ -224,14 +224,14 @@
                     
                     <div class="endpoint-group">
                         <h3><span class="method-badge get">GET</span> Semua Mahasiswa</h3>
-                        <div class="endpoint-url">student/api_get_all</div>
+                        <div class="endpoint-url">api/students</div>
                         <div class="endpoint-desc">Mengambil daftar lengkap semua mahasiswa</div>
-                        <button class="btn" onclick="testEndpoint('GET', 'student/api_get_all')">Test</button>
+                        <button class="btn" onclick="testEndpoint('GET', 'api/students')">Test</button>
                     </div>
                     
                     <div class="endpoint-group">
                         <h3><span class="method-badge get">GET</span> Data Mahasiswa (by ID)</h3>
-                        <div class="endpoint-url">student/api_get/[ID]</div>
+                        <div class="endpoint-url">api/students/[ID]</div>
                         <div class="endpoint-desc">Mengambil data mahasiswa berdasarkan ID</div>
                         <div class="form-group">
                             <input type="number" id="getId" value="1" placeholder="Masukkan ID">
@@ -241,7 +241,7 @@
                     
                     <div class="endpoint-group">
                         <h3><span class="method-badge get">GET</span> Cari Mahasiswa</h3>
-                        <div class="endpoint-url">student/api_search?q=[KEYWORD]</div>
+                        <div class="endpoint-url">api/students/search?q=[KEYWORD]</div>
                         <div class="endpoint-desc">Mencari mahasiswa berdasarkan nama</div>
                         <div class="form-group">
                             <input type="text" id="searchKeyword" placeholder="Masukkan keyword pencarian">
@@ -251,21 +251,21 @@
                     
                     <div class="endpoint-group">
                         <h3><span class="method-badge post">POST</span> Tambah Mahasiswa</h3>
-                        <div class="endpoint-url">student/api_create</div>
+                        <div class="endpoint-url">api/students/create</div>
                         <div class="endpoint-desc">Menambahkan mahasiswa baru</div>
                         <button class="btn" onclick="switchTab('post')">Edit & Test</button>
                     </div>
                     
                     <div class="endpoint-group">
                         <h3><span class="method-badge put">PUT</span> Update Mahasiswa</h3>
-                        <div class="endpoint-url">student/api_update/[ID]</div>
+                        <div class="endpoint-url">api/students/update/[ID]</div>
                         <div class="endpoint-desc">Mengubah data mahasiswa</div>
                         <button class="btn" onclick="switchTab('put')">Edit & Test</button>
                     </div>
                     
                     <div class="endpoint-group">
                         <h3><span class="method-badge delete">DELETE</span> Hapus Mahasiswa</h3>
-                        <div class="endpoint-url">student/api_delete/[ID]</div>
+                        <div class="endpoint-url">api/students/delete/[ID]</div>
                         <div class="endpoint-desc">Menghapus data mahasiswa</div>
                         <div class="form-group">
                             <input type="number" id="deleteId" value="1" placeholder="Masukkan ID">
@@ -334,7 +334,7 @@
     </div>
     
     <script>
-        const baseUrl = 'http://localhost:8080/UAS_PW/';
+        const baseUrl = 'http://localhost/UAS_PW/';
         
         function switchTab(tab) {
             document.getElementById('mainTab').style.display = tab === 'main' ? 'block' : 'none';
@@ -370,18 +370,18 @@
         
         function testGetById() {
             const id = document.getElementById('getId').value;
-            testEndpoint('GET', `student/api_get/${id}`);
+            testEndpoint('GET', `api/students/${id}`);
         }
         
         function testSearch() {
             const q = document.getElementById('searchKeyword').value;
-            testEndpoint('GET', `student/api_search?q=${q}`);
+            testEndpoint('GET', `api/students/search?q=${q}`);
         }
         
         async function testPost() {
             try {
                 const payload = document.getElementById('postPayload').value;
-                const response = await fetch(baseUrl + 'student/api_create', {
+                const response = await fetch(baseUrl + 'api/students/create', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -399,7 +399,7 @@
             try {
                 const id = document.getElementById('putId').value;
                 const payload = document.getElementById('putPayload').value;
-                const response = await fetch(baseUrl + `student/api_update/${id}`, {
+                const response = await fetch(baseUrl + `api/students/update/${id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -415,7 +415,7 @@
         
         function testDelete() {
             const id = document.getElementById('deleteId').value;
-            testEndpoint('DELETE', `student/api_delete/${id}`);
+            testEndpoint('DELETE', `api/students/delete/${id}`);
         }
     </script>
 </body>

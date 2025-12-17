@@ -33,14 +33,14 @@
         </header>
         
         <div class="content">
-            <a href="<?php echo base_url('student'); ?>" class="btn btn-primary" style="margin-bottom: 20px;">← Kembali</a>
+            <a href="<?php echo base_url('students'); ?>" class="btn btn-primary" style="margin-bottom: 20px;">← Kembali</a>
 
             <?php if(!$student): ?>
                 <div class="alert-error">
                     ✗ Data mahasiswa tidak ditemukan!
                 </div>
             <?php else: ?>
-                <form method="post" action="<?php echo base_url('student/update/' . $student['id']); ?>">
+                <form method="post" action="<?php echo base_url('students/update/' . $student['id']); ?>">
                     <div class="form-group">
                         <label for="nim">NIM *</label>
                         <input type="text" id="nim" name="nim" required value="<?php echo htmlspecialchars($student['nim']); ?>">
@@ -63,7 +63,7 @@
 
                     <div class="btn-group">
                         <button type="submit" class="btn btn-primary">💾 Perbarui</button>
-                        <a href="<?php echo base_url('student'); ?>" class="btn btn-danger">❌ Batal</a>
+                        <a href="<?php echo base_url('students'); ?>" class="btn btn-danger">❌ Batal</a>
                     </div>
                 </form>
 

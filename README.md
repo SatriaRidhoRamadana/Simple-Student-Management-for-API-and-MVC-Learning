@@ -45,29 +45,29 @@ $db['default'] = array(
 
 ### 4️⃣ Jalankan Aplikasi
 - Pastikan Apache & MySQL sudah berjalan
-- Akses: `http://localhost/UAS_PW/student`
+- Akses: `http://localhost/UAS_PW/students`
 
-## 📡 API Endpoints
+## 📡 API Endpoints (RESTful)
 
 | Method | Endpoint | Deskripsi |
 |--------|----------|-----------|
-| GET | `/student/api_get_all` | Ambil semua mahasiswa |
-| GET | `/student/api_get/{id}` | Ambil mahasiswa berdasarkan ID |
-| GET | `/student/api_search?q={keyword}` | Cari mahasiswa |
-| POST | `/student/api_create` | Tambah mahasiswa baru |
-| PUT | `/student/api_update/{id}` | Update data mahasiswa |
-| DELETE | `/student/api_delete/{id}` | Hapus mahasiswa |
+| GET | `/api/students` | Ambil semua mahasiswa |
+| GET | `/api/students/{id}` | Ambil mahasiswa berdasarkan ID |
+| GET | `/api/students/search?q={keyword}` | Cari mahasiswa |
+| POST | `/api/students/create` | Tambah mahasiswa baru |
+| PUT | `/api/students/update/{id}` | Update data mahasiswa |
+| DELETE | `/api/students/delete/{id}` | Hapus mahasiswa |
 
 ### Contoh Request
 
 **GET - Ambil Semua Data**
 ```bash
-curl http://localhost/UAS_PW/student/api_get_all
+curl http://localhost/UAS_PW/api/students
 ```
 
 **POST - Tambah Data**
 ```bash
-curl -X POST http://localhost/UAS_PW/student/api_create \
+curl -X POST http://localhost/UAS_PW/api/students/create \
   -H "Content-Type: application/json" \
   -d '{
     "nama": "John Doe",

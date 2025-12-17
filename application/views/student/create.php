@@ -32,9 +32,9 @@
         </header>
         
         <div class="content">
-            <a href="<?php echo base_url('student'); ?>" class="btn btn-primary" style="margin-bottom: 20px;">← Kembali</a>
+            <a href="<?php echo base_url('students'); ?>" class="btn btn-primary" style="margin-bottom: 20px;">← Kembali</a>
 
-            <form method="post" action="<?php echo base_url('student/store'); ?>">
+            <form method="post" action="<?php echo base_url('students/store'); ?>">
                 <div class="form-group">
                     <label for="nim">NIM *</label>
                     <input type="text" id="nim" name="nim" required placeholder="Contoh: 2024001">
@@ -57,7 +57,7 @@
 
                 <div class="btn-group">
                     <button type="submit" class="btn btn-primary">💾 Simpan</button>
-                    <a href="<?php echo base_url('student'); ?>" class="btn btn-danger">❌ Batal</a>
+                    <a href="<?php echo base_url('students'); ?>" class="btn btn-danger">❌ Batal</a>
                 </div>
             </form>
 
