@@ -46,27 +46,44 @@ $db['default'] = array(
 - Pastikan Apache & MySQL sudah berjalan
 - Akses: `http://localhost/UAS_PW/students`
 
-## 📡 API Endpoints (RESTful)
+## 🌐 URL yang Tersedia
 
-| Method | Endpoint | Deskripsi |
-|--------|----------|-----------|
-| GET | `/api/students` | Ambil semua mahasiswa |
-| GET | `/api/students/{id}` | Ambil mahasiswa berdasarkan ID |
-| GET | `/api/students/search?q={keyword}` | Cari mahasiswa |
-| POST | `/api/students/create` | Tambah mahasiswa baru |
-| PUT | `/api/students/update/{id}` | Update data mahasiswa |
-| DELETE | `/api/students/delete/{id}` | Hapus mahasiswa |
+### Web Interface (Tampilan HTML)
+- `http://localhost/UAS_PW/students` - Daftar mahasiswa
+- `http://localhost/UAS_PW/students/create` - Form tambah
+- `http://localhost/UAS_PW/students/edit/1` - Form edit ID 1
+- `http://localhost/UAS_PW/students/delete/1` - Hapus ID 1
 
-### Contoh Request
+### API Endpoints (Return JSON)
+- `http://localhost/UAS_PW/student/api_get_all` - GET semua data
+- `http://localhost/UAS_PW/student/api_get/1` - GET data ID 1
+- `http://localhost/UAS_PW/student/api_search?q=nama` - Cari data
+- `http://localhost/UAS_PW/student/api_create` - POST data baru
+- `http://localhost/UAS_PW/student/api_update/1` - PUT update ID 1
+- `http://localhost/UAS_PW/student/api_delete/1` - DELETE ID 1
 
-**GET - Ambil Semua Data**
+## 💡 Perbedaan Web vs API
+
+**Web Interface** → Menampilkan **HTML** (untuk manusia)
+- Akses di browser
+- Ada tampilan form, tabel, tombol
+- Untuk user yang pakai website
+
+**API Endpoints** → Mengembalikan **JSON** (untuk program lain)
+- Untuk aplikasi mobile, JavaScript, dll
+- Data mentah tanpa tampilan
+- Untuk programmer yang ingin pakai data
+
+## 📡 Contoh Testing API
+
+### GET - Ambil Semua Data
 ```bash
-curl http://localhost/UAS_PW/api/students
+curl http://localhost/UAS_PW/student/api_get_all
 ```
 
-**POST - Tambah Data**
+### POST - Tambah Data
 ```bash
-curl -X POST http://localhost/UAS_PW/api/students/create \
+curl -X POST http://localhost/UAS_PW/student/api_create \
   -H "Content-Type: application/json" \
   -d '{
     "nama": "John Doe",

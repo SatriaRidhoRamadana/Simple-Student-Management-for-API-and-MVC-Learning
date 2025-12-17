@@ -101,14 +101,14 @@
             <?php endif; ?>
 
             <div class="info-box" style="margin-top: 30px;">
-                <h4>📡 API Endpoints yang Tersedia (RESTful):</h4>
+                <h4>📡 API Endpoints (Return JSON):</h4>
                 <p>
-                    <strong>GET</strong> <code><?php echo base_url('api/students'); ?></code> - Ambil semua mahasiswa<br>
-                    <strong>GET</strong> <code><?php echo base_url('api/students/1'); ?></code> - Ambil mahasiswa ID 1<br>
-                    <strong>GET</strong> <code><?php echo base_url('api/students/search?q=nama'); ?></code> - Cari mahasiswa<br>
-                    <strong>POST</strong> <code><?php echo base_url('api/students/create'); ?></code> - Tambah mahasiswa (JSON)<br>
-                    <strong>PUT</strong> <code><?php echo base_url('api/students/update/1'); ?></code> - Update mahasiswa (JSON)<br>
-                    <strong>DELETE</strong> <code><?php echo base_url('api/students/delete/1'); ?></code> - Hapus mahasiswa
+                    <strong>GET</strong> <code><?php echo base_url('student/api_get_all'); ?></code> - Ambil semua mahasiswa<br>
+                    <strong>GET</strong> <code><?php echo base_url('student/api_get/1'); ?></code> - Ambil mahasiswa ID 1<br>
+                    <strong>GET</strong> <code><?php echo base_url('student/api_search?q=nama'); ?></code> - Cari mahasiswa<br>
+                    <strong>POST</strong> <code><?php echo base_url('student/api_create'); ?></code> - Tambah mahasiswa (JSON)<br>
+                    <strong>PUT</strong> <code><?php echo base_url('student/api_update/1'); ?></code> - Update mahasiswa (JSON)<br>
+                    <strong>DELETE</strong> <code><?php echo base_url('student/api_delete/1'); ?></code> - Hapus mahasiswa
                 </p>
             </div>
         </div>
